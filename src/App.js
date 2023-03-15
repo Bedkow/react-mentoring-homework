@@ -6,7 +6,7 @@ import GenreSelect from './components/GenreSelect';
 function App() {
   return (
     <div className="App">
-      <Counter />
+      <Counter initialValue={0}/>
       <SearchForm />
       <GenreSelect />
     </div>
