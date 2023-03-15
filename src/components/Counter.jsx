@@ -25,7 +25,6 @@ class Counter extends React.Component {
       React.createElement('div', {}, this.state.value),
       React.createElement('button', { onClick: this.plus }, '+'),
       React.createElement('button', { onClick: this.minus }, '-'),
-      React.createElement('hr')
     );
   }
 }
