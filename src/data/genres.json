@@ -1,0 +1,9 @@
+{
+    "genres" : [
+        {"genreName": "Horror"},
+        {"genreName": "Thriller"},
+        {"genreName": "Comedy"},
+        {"genreName": "Drama"},
+        {"genreName": "Adult"}
+    ]
+}

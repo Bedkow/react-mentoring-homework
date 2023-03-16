@@ -1,5 +1,6 @@
 import './SearchForm.css'
 
+
 function SearchForm({initialQuery, handleSearch}) {
 	return (
 		<form onSubmit={handleSearch} className="searchForm">
