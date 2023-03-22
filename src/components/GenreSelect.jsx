@@ -1,28 +1,24 @@
+import React from 'react';
 import './GenreSelect.css';
 
+class GenreSelect extends React.Component {
+	handleGenreClick = (genre) => {
+		this.props.onSelect(genre);
+	};
 
-function GenreSelect({ genreData, selectedGenreList, handleSelectGenre }) {
-
-	return (
-		<div className="genre-select">
-			<label>Choose a genre</label>
-			<ul name="genre-dropdown" id="genre-dropdown">
-				{genreData.genres.map((genre) => {
-					return (
-						<li key={genre.genreName} className="genre-button">
-							<input
-								type="checkbox"
-								name={genre.genreName}
-								id={genre.genreName}
-                                onChange={handleSelectGenre}
-							/>
-							<label htmlFor={genre.genreName}>{genre.genreName}</label>
-						</li>
-					);
-				})}
-			</ul>
-		</div>
-	);
+	render() {
+		const genres = this.props.genres.map((genre) => {
+			return React.createElement(
+				'button',
+				{
+					onClick: () => this.handleGenreClick(genre),
+					className: genre === this.props.selectedGenre ? 'selected' : '',
+				},
+				genre
+			);
+		});
+		return React.createElement('div', null, ...genres);
+	}
 }
 
 export default GenreSelect;

@@ -1,32 +1,36 @@
 import React from 'react';
 
 class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: props.initialValue,
-    };
-  }
+	constructor(props) {
+		super(props);
+		this.state = { value: props.value };
+	}
 
-  plus = () => {
-    const { value } = this.state;
-    this.setState({ value: value + 1 });
-  };
+	handleIncrement = () => {
+		this.setState({ value: this.state.value + 1 });
+	};
 
-  minus = () => {
-    const { value } = this.state;
-    this.setState({ value: value - 1 });
-  };
+	handleDecrement = () => {
+		this.setState({ value: this.state.value - 1 });
+	};
 
-  render() {
-    return React.createElement(
-      'div',
-      {},
-      React.createElement('div', {}, this.state.value),
-      React.createElement('button', { onClick: this.plus }, '+'),
-      React.createElement('button', { onClick: this.minus }, '-'),
-    );
-  }
+	render() {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement('h2', null, `Counter value: ${this.state.value}`),
+			React.createElement(
+				'button',
+				{ onClick: this.handleDecrement },
+				'Decrement'
+			),
+			React.createElement(
+				'button',
+				{ onClick: this.handleIncrement },
+				'Increment'
+			)
+		);
+	}
 }
 
 export default Counter;

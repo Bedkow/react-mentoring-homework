@@ -2,39 +2,32 @@ import './App.css';
 import Counter from './components/Counter';
 import SearchForm from './components/SearchForm';
 import GenreSelect from './components/GenreSelect';
-import genreData from "./data/genres.json"
+import genreData from './data/genres.json';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-function App() {
-
- const handleSearch = (e) => {
-    e.preventDefault();
-    let searchValue = document.querySelector('#search-input').value;
-    console.log(searchValue);
-  }
-
-  let selectedGenreList = [];
-
-  const handleSelectGenre = (e) => {
-    if (e.target.checked) {
-      console.log(`checked ${e.target.name}`);
-      e.target.parentElement.classList.add("active");
-      selectedGenreList.push(e.target.name);
-    } else {
-      console.log(`unchecked ${e.target.name}`);
-      e.target.parentElement.classList.remove("active");
-      selectedGenreList = selectedGenreList.filter((genre) => genre !== e.target.name);
-    }
-  }
-
-  return (
-    <div className="App">
-      <Counter initialValue={0}/>
-      <hr></hr>
-      <SearchForm initialQuery={"Movie Title"} handleSearch={handleSearch}/>
-      <hr></hr>
-      <GenreSelect genreData={genreData} selectedGenreList={selectedGenreList} handleSelectGenre={handleSelectGenre}/>
-    </div>
-  );
+class App extends React.Component {
+	render() {
+		return React.createElement(
+			'div',
+			null,
+			React.createElement(Counter, { value: 0 }),
+			React.createElement(SearchForm, {
+				initialQuery: 'query',
+				onSearch: (query) => console.log(`Search query: ${query}`),
+			}),
+			React.createElement(GenreSelect, {
+				genres: genreData.genres,
+				selectedGenre: 'Thriller',
+				onSelect: (genre) => console.log(`Selected genre: ${genre}`),
+			})
+		);
+	}
 }
+
+ReactDOM.render(
+	React.createElement(App, null),
+	document.getElementById('root')
+);
 
 export default App;

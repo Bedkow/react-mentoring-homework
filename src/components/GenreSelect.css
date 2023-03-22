@@ -20,6 +20,6 @@
     text-align: left;
 }
 
-.active {
+.selected {
     border: 2px yellow solid;
 }
