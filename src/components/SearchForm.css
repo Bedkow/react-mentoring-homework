@@ -1,0 +1,30 @@
+.searchForm {
+    background-color: #232323;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.submitButton {
+    width: 180px;
+    height: 57px;
+    border-radius: 4px;
+    background-color: #F65261;
+    color: #FFFFFF;
+    border: none;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.searchInput {
+    background-color: #323232F2;
+    border: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    height: 57px;
+    padding: 5px;
+}
+
+.searchLabel {
+    color: #F65261;
+    padding: 10px;
+}

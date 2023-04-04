@@ -1,0 +1,25 @@
+.genre-select {
+    background-color: #323232F2;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+#genre-dropdown {
+    list-style-type: none;
+    background-color: #232323EA;
+}
+
+.genre-button {
+    width: fit-content;
+    /* height: 57px; */
+    /* border-radius: 4px; */
+    color: #FFFFFF;
+    border: none;
+    margin: 10px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.selected {
+    border: 2px yellow solid;
+}
