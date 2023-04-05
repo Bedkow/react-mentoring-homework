@@ -1,0 +1,22 @@
+{
+    "movies" : [
+        {
+            "imgUrl": "https://placekitten.com/200/300",
+            "movieName": "Random Cat1",
+            "releaseYear": 2021,
+            "genresList": ["cats", "pets", "thriller"]
+        },
+        {
+            "imgUrl": "https://placekitten.com/200/300",
+            "movieName": "Random Cat2",
+            "releaseYear": 2022,
+            "genresList": ["cats", "pets", "drama"]
+        },
+        {
+            "imgUrl": "https://placekitten.com/200/300",
+            "movieName": "Random Cat3",
+            "releaseYear": 2023,
+            "genresList": ["cats", "pets", "comedy"]
+        }
+    ]
+}
