@@ -37,7 +37,6 @@ export default function App() {
         selectedGenre="Thriller"
         onSelect={(genre) => console.log(`Selected genre: ${genre}`)}
       />
-	  moviesData.map
       <MovieTile
         imgUrl={'https://placekitten.com/200/300'}
         movieName="Random Cat"
