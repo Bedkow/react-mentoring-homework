@@ -10,6 +10,7 @@ import MovieTile from './components/MovieTile';
 import MovieDetails from './components/MovieDetails';
 import SortControl from './components/SortControl';
 import { useState } from 'react';
+import MovieListPage from './components/MovieListPage';
 
 export default function App() {
   const [currentSelection, setCurrentSelection] = useState("title");
@@ -25,6 +26,7 @@ export default function App() {
 
   return (
     <div>
+      {/* <MovieListPage/> */}
       <Counter value={0} />
       <SearchForm
         initialQuery={'query'}

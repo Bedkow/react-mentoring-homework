@@ -1,44 +1,39 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-class SearchForm extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = { query: props.initialQuery };
-		this.inputRef = React.createRef();
-	}
+const SearchForm = ({ initialQuery, onSubmitQuery }) => {
+  const [query, setQuery] = useState(initialQuery);
+  const inputRef = useRef(null);
 
-	handleInputChange = (event) => {
-		this.setState({ query: event.target.value });
-	};
+  const handleInputChange = event => {
+    setQuery(event.target.value);
+  };
 
-	handleSearch = () => {
-		this.props.onSearch(this.state.query);
-	};
+  const handleSearch = () => {
+    onSubmitQuery(inputRef);
+  };
 
-	handleKeyDown = (event) => {
-		if (event.key === 'Enter') {
-			this.handleSearch();
-		}
-	};
+  const handleKeyDown = event => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
+  
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
-	componentDidMount() {
-		this.inputRef.current.focus();
-	}
-
-	render() {
-		return React.createElement(
-			'div',
-			null,
-			React.createElement('input', {
-				type: 'text',
-				value: this.state.query,
-				onChange: this.handleInputChange,
-				onKeyDown: this.handleKeyDown,
-				ref: this.inputRef,
-			}),
-			React.createElement('button', { onClick: this.handleSearch }, 'Search')
-		);
-	}
-}
+  return (
+    <div>
+      <input
+        type="text"
+        value={query}
+        onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
+        ref={inputRef}
+      />
+      <button onClick={handleSearch}>Search</button>
+    </div>
+  );
+};
 
 export default SearchForm;
