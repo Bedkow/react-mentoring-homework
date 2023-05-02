@@ -1,24 +1,37 @@
 import React from 'react';
 import './GenreSelect.css';
 
-class GenreSelect extends React.Component {
-	handleGenreClick = (genre) => {
-		this.props.onSelect(genre);
+const GenreSelect = ({
+	genres = ['horror', 'comedy'],
+	selectedGenre,
+	onSelect,
+}) => {
+	const handleGenreClick = (genre) => {
+		onSelect(genre);
 	};
 
-	render() {
-		const genres = this.props.genres.map((genre) => {
-			return React.createElement(
-				'button',
-				{
-					onClick: () => this.handleGenreClick(genre),
-					className: genre === this.props.selectedGenre ? 'selected' : '',
-				},
-				genre
-			);
-		});
-		return React.createElement('div', null, ...genres);
-	}
-}
+	const genreButtons = genres.map((genre) => (
+		<button
+			key={genre}
+			onClick={() => handleGenreClick(genre)}
+			className={genre === selectedGenre ? 'selected' : ''}
+		>
+			{genre}
+		</button>
+	));
+
+	return (
+		<div>
+			<button
+				key={'All'}
+				onClick={() => handleGenreClick('All')}
+				className={'All' === selectedGenre ? 'selected' : ''}
+			>
+				All
+			</button>
+			{genreButtons}
+		</div>
+	);
+};
 
 export default GenreSelect;
