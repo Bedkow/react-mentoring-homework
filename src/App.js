@@ -13,21 +13,21 @@ import { useState } from 'react';
 import MovieListPage from './components/MovieListPage';
 
 export default function App() {
-  const [currentSelection, setCurrentSelection] = useState("title");
+  // const [currentSelection, setCurrentSelection] = useState("title");
 
-  const handleSelection = (e) => {
-    setCurrentSelection(e.target.value)
-    console.log(`current selection: ${e.target.value}`)
-  }
+  // const handleSelection = (e) => {
+  //   setCurrentSelection(e.target.value)
+  //   console.log(`current selection: ${e.target.value}`)
+  // }
 
-  function handleClick () {
-    console.log('clicked');
-  };
+  // function handleClick () {
+  //   console.log('clicked');
+  // };
 
   return (
     <div>
-      {/* <MovieListPage/> */}
-      <Counter value={0} />
+      <MovieListPage/>
+      {/* <Counter value={0} />
       <SearchForm
         initialQuery={'query'}
         onSearch={(query) => {
@@ -49,7 +49,7 @@ export default function App() {
 	  <MovieDetails isActive={true} movieName="cat" releaseYear={2000} rating={6.9} duration={153} description={"Leading AI academics and industry experts - including Steve Wozniak and Elon Musk, published an open letter today calling for a pause on developing more sophisticated AI beyond OpenAI's GPT-4. The letter cites risks to society and humanity as a major concern and asks for the pause to enable the industry to develop shared safety protocols."}/>
 	  <MovieDetails isActive={false} movieName="dog" releaseYear={2021} rating={1.7} duration={150} description={"Leading AI academics and industry experts - including Steve Wozniak and Elon Musk, published an open letter today calling for a pause on developing more sophisticated AI beyond OpenAI's GPT-4. The letter cites risks to society and humanity as a major concern and asks for the pause to enable the industry to develop shared safety protocols."}/>
 	  <MovieDetails isActive={false} movieName="bird" releaseYear={2009} rating={3.5} duration={105} description={"Leading AI academics and industry experts - including Steve Wozniak and Elon Musk, published an open letter today calling for a pause on developing more sophisticated AI beyond OpenAI's GPT-4. The letter cites risks to society and humanity as a major concern and asks for the pause to enable the industry to develop shared safety protocols."}/>
-    <SortControl currentSelection={currentSelection} handleSelection={handleSelection}/>
+    <SortControl currentSelection={currentSelection} handleSelection={handleSelection}/> */}
     </div>
   );
 }
